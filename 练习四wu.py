@@ -1,0 +1,373 @@
+﻿# -*- coding: utf-8 -*-
+"""
+Created on Thu Jun 21 11:37:49 2018
+
+@author: Administrator
+"""
+练习四
+练习五:实现练习四，
+1.使用函数写出来。定义函数，输出每一天6:00,12:00,18:00的天气信息
+2.打印折线图,使用字符串的*号操作
+10----------
+5-----
+import urllib.request as r#导入联网工具包，命令为r
+url='http://api.openweathermap.org/data/2.5/forecast?q=yantai,cn&mode=json&lang=zh_cn&&APPID=6a67ed641c0fda8b69715c43518b6996&units=metric'
+data=r.urlopen(url).read().decode('utf-8')
+import json
+data=json.loads(data)
+#2018-06-21 06:00
+a=data['city']['name']
+b=data['list'][0]['dt_txt']
+c=data['list'][0]['main']['temp']
+d=data['list'][0]['weather'][0]['description']
+e=data['list'][0]['main']['pressure']
+f=data['list'][0]['main']['temp_min']
+g=data['list'][0]['main']['temp_max']
+print('城市{},时间{},温度{},天气情况{},气压{},最低温度{},最高温度{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][0]['dt_txt']
+c=data['list'][0]['main']['temp']
+d=data['list'][0]['weather'][0]['main']
+e=data['list'][0]['main']['pressure']
+f=data['list'][0]['main']['temp_min']
+g=data['list'][0]['main']['temp_max']
+print('city{},time{},temp{},description{},pressure{},temp_min{},temp_max{}'.format(a,b,c,d,e,f,g))
+#2018-06-21 12:00
+a=data['city']['name']
+b=data['list'][2]['dt_txt']
+c=data['list'][2]['main']['temp']
+d=data['list'][2]['weather'][0]['description']
+e=data['list'][2]['main']['pressure']
+f=data['list'][2]['main']['temp_min']
+g=data['list'][2]['main']['temp_max']
+print('城市{},时间{},温度{},天气情况{},气压{},最低温度{},最高温度{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][2]['dt_txt']
+c=data['list'][2]['main']['temp']
+d=data['list'][2]['weather'][0]['main']
+e=data['list'][2]['main']['pressure']
+f=data['list'][2]['main']['temp_min']
+g=data['list'][2]['main']['temp_max']
+print('city{},time{},temp{},description{},pressure{},temp_min{},temp_max{}'.format(a,b,c,d,e,f,g))
+#2018-06-21 18:00
+a=data['city']['name']
+b=data['list'][4]['dt_txt']
+c=data['list'][4]['main']['temp']
+d=data['list'][4]['weather'][0]['description']
+e=data['list'][4]['main']['pressure']
+f=data['list'][4]['main']['temp_min']
+g=data['list'][4]['main']['temp_max']
+print('城市{},时间{},温度{},天气情况{},气压{},最低温度{},最高温度{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][4]['dt_txt']
+c=data['list'][4]['main']['temp']
+d=data['list'][4]['weather'][0]['main']
+e=data['list'][4]['main']['pressure']
+f=data['list'][4]['main']['temp_min']
+g=data['list'][4]['main']['temp_max']
+print('city{},time{},temp{},description{},pressure{},temp_min{},temp_max{}'.format(a,b,c,d,e,f,g))
+print('建议：今天晴转多云，外出可戴太阳镜、遮阳帽，适合衬衫')
+#2018-06-22 06:00
+a=data['city']['name']
+b=data['list'][8]['dt_txt']
+c=data['list'][8]['main']['temp']
+d=data['list'][8]['weather'][0]['description']
+e=data['list'][8]['main']['pressure']
+f=data['list'][8]['main']['temp_min']
+g=data['list'][8]['main']['temp_max']
+print('城市{},时间{},温度{},天气情况{},气压{},最低温度{},最高温度{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][8]['dt_txt']
+c=data['list'][8]['main']['temp']
+d=data['list'][8]['weather'][0]['main']
+e=data['list'][8]['main']['pressure']
+f=data['list'][8]['main']['temp_min']
+g=data['list'][8]['main']['temp_max']
+print('city{},time{},temp{},description{},pressure{},temp_min{},temp_max{}'.format(a,b,c,d,e,f,g))
+#2018-06-22 12:00
+a=data['city']['name']
+b=data['list'][10]['dt_txt']
+c=data['list'][10]['main']['temp']
+d=data['list'][10]['weather'][0]['description']
+e=data['list'][10]['main']['pressure']
+f=data['list'][10]['main']['temp_min']
+g=data['list'][10]['main']['temp_max']
+print('城市{},时间{},温度{},天气情况{},气压{},最低温度{},最高温度{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][10]['dt_txt']
+c=data['list'][10]['main']['temp']
+d=data['list'][10]['weather'][0]['main']
+e=data['list'][10]['main']['pressure']
+f=data['list'][10]['main']['temp_min']
+g=data['list'][10]['main']['temp_max']
+print('city{},time{},temp{},description{},pressure{},temp_min{},temp_max{}'.format(a,b,c,d,e,f,g))
+#2018-06-22 18:00
+a=data['city']['name']
+b=data['list'][12]['dt_txt']
+c=data['list'][12]['main']['temp']
+d=data['list'][12]['weather'][0]['description']
+e=data['list'][12]['main']['pressure']
+f=data['list'][12]['main']['temp_min']
+g=data['list'][12]['main']['temp_max']
+print('城市{},时间{},温度{},天气情况{},气压{},最低温度{},最高温度{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][12]['dt_txt']
+c=data['list'][12]['main']['temp']
+d=data['list'][12]['weather'][0]['main']
+e=data['list'][12]['main']['pressure']
+f=data['list'][12]['main']['temp_min']
+g=data['list'][12]['main']['temp_max']
+print('city{},time{},temp{},description{},pressure{},temp_min{},temp_max{}'.format(a,b,c,d,e,f,g))
+print('建议：今天晴转多云，外出可戴太阳镜、遮阳帽，，可户外运动')
+
+a=data['city']['name']
+b=data['list'][16]['dt_txt']
+c=data['list'][16]['main']['temp']
+d=data['list'][16]['weather'][0]['description']
+e=data['list'][16]['main']['pressure']
+f=data['list'][16]['main']['temp_min']
+g=data['list'][16]['main']['temp_max']
+print('城市{},时间{},温度{},天气情况{},气压{},最低温度{},最高温度{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][16]['dt_txt']
+c=data['list'][16]['main']['temp']
+d=data['list'][16]['weather'][0]['main']
+e=data['list'][16]['main']['pressure']
+f=data['list'][16]['main']['temp_min']
+g=data['list'][16]['main']['temp_max']
+print('city{},time{},temp{},description{},pressure{},temp_min{},temp_max{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][18]['dt_txt']
+c=data['list'][18]['main']['temp']
+d=data['list'][18]['weather'][0]['description']
+e=data['list'][18]['main']['pressure']
+f=data['list'][18]['main']['temp_min']
+g=data['list'][18]['main']['temp_max']
+print('城市{},时间{},温度{},天气情况{},气压{},最低温度{},最高温度{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][18]['dt_txt']
+c=data['list'][18]['main']['temp']
+d=data['list'][18]['weather'][0]['main']
+e=data['list'][18]['main']['pressure']
+f=data['list'][18]['main']['temp_min']
+g=data['list'][18]['main']['temp_max']
+print('city{},time{},temp{},description{},pressure{},temp_min{},temp_max{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][20]['dt_txt']
+c=data['list'][20]['main']['temp']
+d=data['list'][20]['weather'][0]['description']
+e=data['list'][20]['main']['pressure']
+f=data['list'][20]['main']['temp_min']
+g=data['list'][20]['main']['temp_max']
+print('城市{},时间{},温度{},天气情况{},气压{},最低温度{},最高温度{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][20]['dt_txt']
+c=data['list'][20]['main']['temp']
+d=data['list'][20]['weather'][0]['main']
+e=data['list'][20]['main']['pressure']
+f=data['list'][20]['main']['temp_min']
+g=data['list'][20]['main']['temp_max']
+print('city{},time{},temp{},description{},pressure{},temp_min{},temp_max{}'.format(a,b,c,d,e,f,g))
+print('建议：今天晴，外出可戴太阳镜、遮阳帽，适合短袖')
+
+a=data['city']['name']
+b=data['list'][24]['dt_txt']
+c=data['list'][24]['main']['temp']
+d=data['list'][24]['weather'][0]['description']
+e=data['list'][24]['main']['pressure']
+f=data['list'][24]['main']['temp_min']
+g=data['list'][24]['main']['temp_max']
+print('城市{},时间{},温度{},天气情况{},气压{},最低温度{},最高温度{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][24]['dt_txt']
+c=data['list'][24]['main']['temp']
+d=data['list'][24]['weather'][0]['main']
+e=data['list'][24]['main']['pressure']
+f=data['list'][24]['main']['temp_min']
+g=data['list'][24]['main']['temp_max']
+print('city{},time{},temp{},description{},pressure{},temp_min{},temp_max{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][26]['dt_txt']
+c=data['list'][26]['main']['temp']
+d=data['list'][26]['weather'][0]['description']
+e=data['list'][26]['main']['pressure']
+f=data['list'][26]['main']['temp_min']
+g=data['list'][26]['main']['temp_max']
+print('城市{},时间{},温度{},天气情况{},气压{},最低温度{},最高温度{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][26]['dt_txt']
+c=data['list'][26]['main']['temp']
+d=data['list'][26]['weather'][0]['main']
+e=data['list'][26]['main']['pressure']
+f=data['list'][26]['main']['temp_min']
+g=data['list'][26]['main']['temp_max']
+print('city{},time{},temp{},description{},pressure{},temp_min{},temp_max{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][28]['dt_txt']
+c=data['list'][28]['main']['temp']
+d=data['list'][28]['weather'][0]['description']
+e=data['list'][28]['main']['pressure']
+f=data['list'][28]['main']['temp_min']
+g=data['list'][28]['main']['temp_max']
+print('城市{},时间{},温度{},天气情况{},气压{},最低温度{},最高温度{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][28]['dt_txt']
+c=data['list'][28]['main']['temp']
+d=data['list'][28]['weather'][0]['main']
+e=data['list'][28]['main']['pressure']
+f=data['list'][28]['main']['temp_min']
+g=data['list'][28]['main']['temp_max']
+print('city{},time{},temp{},description{},pressure{},temp_min{},temp_max{}'.format(a,b,c,d,e,f,g))
+print('建议：今天晴，外出可戴太阳镜、遮阳帽，适合短袖')
+a=data['city']['name']
+b=data['list'][32]['dt_txt']
+c=data['list'][32]['main']['temp']
+d=data['list'][32]['weather'][0]['description']
+e=data['list'][32]['main']['pressure']
+f=data['list'][32]['main']['temp_min']
+g=data['list'][32]['main']['temp_max']
+print('城市{},时间{},温度{},天气情况{},气压{},最低温度{},最高温度{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][32]['dt_txt']
+c=data['list'][32]['main']['temp']
+d=data['list'][32]['weather'][0]['main']
+e=data['list'][32]['main']['pressure']
+f=data['list'][32]['main']['temp_min']
+g=data['list'][32]['main']['temp_max']
+print('city{},time{},temp{},description{},pressure{},temp_min{},temp_max{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][34]['dt_txt']
+c=data['list'][34]['main']['temp']
+d=data['list'][34]['weather'][0]['description']
+e=data['list'][34]['main']['pressure']
+f=data['list'][34]['main']['temp_min']
+g=data['list'][34]['main']['temp_max']
+print('城市{},时间{},温度{},天气情况{},气压{},最低温度{},最高温度{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][34]['dt_txt']
+c=data['list'][34]['main']['temp']
+d=data['list'][34]['weather'][0]['main']
+e=data['list'][34]['main']['pressure']
+f=data['list'][34]['main']['temp_min']
+g=data['list'][34]['main']['temp_max']
+print('city{},time{},temp{},description{},pressure{},temp_min{},temp_max{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][36]['dt_txt']
+c=data['list'][36]['main']['temp']
+d=data['list'][36]['weather'][0]['description']
+e=data['list'][36]['main']['pressure']
+f=data['list'][36]['main']['temp_min']
+g=data['list'][36]['main']['temp_max']
+print('城市{},时间{},温度{},天气情况{},气压{},最低温度{},最高温度{}'.format(a,b,c,d,e,f,g))
+a=data['city']['name']
+b=data['list'][36]['dt_txt']
+c=data['list'][36]['main']['temp']
+d=data['list'][36]['weather'][0]['main']
+e=data['list'][36]['main']['pressure']
+f=data['list'][36]['main']['temp_min']
+g=data['list'][36]['main']['temp_max']
+print('city{},time{},temp{},description{},pressure{},temp_min{},temp_max{}'.format(a,b,c,d,e,f,g))
+print('建议：今天多云转晴，外出可戴太阳镜、遮阳帽，适合短袖')
+
+def msg(A):
+    a=data['city']['name']
+    b=data['list'][A]['dt_txt']
+    c=data['list'][A]['main']['temp']
+    d=data['list'][A]['weather'][0]['description']
+    e=data['list'][A]['main']['pressure']
+    f=data['list'][A]['main']['temp_min']
+    g=data['list'][A]['main']['temp_max']
+    print('城市{},时间{},温度{},天气情况{},气压{},最低温度{},最高温度{}'.format(a,b,c,d,e,f,g))
+msg(0)
+msg(2)
+msg(4) 
+msg(8) 
+msg(10) 
+msg(12) 
+msg(16) 
+msg(18) 
+msg(20) 
+msg(24) 
+msg(26) 
+msg(28) 
+msg(32) 
+msg(34) 
+msg(36) 
+#折线图
+a1=data['list'][0]['main']['temp']
+print(int(a1)*"-")
+a2=data['list'][2]['main']['temp']
+print(int(a2)*"-")
+a3=data['list'][4]['main']['temp']
+print(int(a3)*"-")
+a4=data['list'][8]['main']['temp']
+print(int(a4)*"-")
+a5=data['list'][10]['main']['temp']
+print(int(a5)*"-")
+a6=data['list'][12]['main']['temp']
+print(int(a6)*"-")
+a7=data['list'][16]['main']['temp']
+print(int(a7)*"-")
+a8=data['list'][18]['main']['temp']
+print(int(a8)*"-")
+a9=data['list'][20]['main']['temp']
+print(int(a9)*"-")
+a10=data['list'][24]['main']['temp']
+print(int(a10)*"-")
+a11=data['list'][26]['main']['temp']
+print(int(a11)*"-")
+a12=data['list'][28]['main']['temp']
+print(int(a12)*"-")
+a13=data['list'][32]['main']['temp']
+print(int(a13)*"-")
+a14=data['list'][34]['main']['temp']
+print(int(a14)*"-")
+a15=data['list'][36]['main']['temp']
+print(int(a15)*"-")
+#倒叙排列
+ls=[]
+ls.append(a1)
+ls.append(a2)
+ls.append(a3)
+ls.append(a4)
+ls.append(a5)
+ls.append(a6)
+ls.append(a7)
+ls.append(a8)
+ls.append(a9)
+ls.append(a10)
+ls1=reversed(sorted(ls)) 
+for i in ls1:
+    print(i)
+    
+ls=[]
+def msn(a): 
+    import urllib.request as r#导入联网工具包，命令为r
+    url='http://api.openweathermap.org/data/2.5/forecast?q={},cn&mode=json&lang=zh_cn&&APPID=6a67ed641c0fda8b69715c43518b6996&units=metric'.format(a)
+    data=r.urlopen(url).read().decode('utf-8')
+    import json
+    data=json.loads(data)
+    a2=data['list'][0]['main']['temp']
+    ls.append(a2)
+b='chongqing'
+b='qingdao'
+b='yantai'
+b='yunnan'
+b='chengdu'
+b='xian'
+b='xiamen'
+b='jiangxi'
+b='xinjiang'
+b='wuhan'
+msn(b)
+ls
+sorted(ls)
+ls1=reversed(ls) 
+print("ls1")
+
+    import urllib.request as r#导入联网工具包，命令为r
+    url='http://api.openweathermap.org/data/2.5/forecast?q={},cn&mode=json&lang=zh_cn&&APPID=6a67ed641c0fda8b69715c43518b6996&units=metric'.format(a)
+    data=r.urlopen(url).read().decode('utf-8')
+    import json
+    data=json.loads(data)
+    a2=data['list'][0]['main']['temp']
