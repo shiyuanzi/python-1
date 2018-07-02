@@ -43,17 +43,7 @@ b=re.compile(".setVar\S.claimCity',(.*?)\S\S>").findall(d)
 for i in range(31):
     print('省份:{},编号:{}'.format(a[i],b[i]))
 
-"""
-#####################my
-for i in ls:
-    data='id={}&type=2&city=61&state=1'.format(i).encode()
-    req=r.Request(url,data=data,headers={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.146 Safari/537.36','X-Requested-With':'XMLHttpRequest'})
-    d=r.urlopen(req).read().decode('utf-8','ignore')
-    ls1=re.compile('"plan":\S(.*?)\S,').findall(d)
-    f=open('./a.csv','w')
-    f.write(ls1+"\n")
-    f.close()
- """  
+
    
 #开始爬数据
 import urllib.request as r
